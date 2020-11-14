@@ -1,0 +1,14 @@
+<!ELEMENT bookingDetails (passenger+)>
+<!ELEMENT passenger (age,gender,address,phone,email,Aadhar,seats,amount,date,category,trainNo)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT email (#PCDATA))>
+<!ELEMENT Aadhar (#PCDATA))> 
+<!ELEMENT seats (#PCDATA))>
+<!ELEMENT amount (#PCDATA))>
+<!ELEMENT date (#PCDATA))>
+<!ELEMENT category (A type/B type/C type/Z type))>
+<!ELEMENT Aadhar (#PCDATA))>
+<!ATTLIST passenger id ID #Required>
+<!ATTLIST passenger name (#PCDATA)>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet version="2.0" type="text/xsl" href="passengerXSLT.xsl"?>
+
+<!-- Use these statements for making use of DTD and schema
+<!DOCTYPE bookingDetails SYSTEM "passengerDTD.dtd">
+<xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNameSpaceLocation="passengerSchema.xsd">-->
+<bookingDetails>
+    <passenger name="Ramu" id="1011">
+        <age>25</age>
+        <gender>Male</gender>
+        <address>43, Gandhi street, Madurai-09</address>
+        <phone>99456 23454</phone>
+        <email>ramuk@gmail.com</email>
+        <Aadhar>1112 3232 5467 2324</Aadhar>
+        <seats>1</seats>
+        <amount>500</amount>
+        <date>25-01-2021</date>
+        <category>Z Type</category>
+        <trainNo>8787</trainNo>
+    </passenger>
+    <passenger name="Kirthana" id="1012">
+        <age>45</age>
+        <gender>Female</gender>
+        <address>23, Guru street, Chennai-03</address>
+        <phone>81453 22454</phone>
+        <email>kirthanagm@gmail.com</email>
+        <Aadhar>3452 3432 5462 2324</Aadhar>
+        <seats>2</seats>
+        <amount>1600</amount>
+        <date>12-03-2021</date>
+        <category>B Type</category>
+        <trainNo>5235</trainNo>
+    </passenger>
+    <passenger name="Prithvik" id="1013">
+        <age>35</age>
+        <gender>Male</gender>
+        <address>14, Laxmi street, Karur-07</address>
+        <phone>86756 20984</phone>
+        <email>prithviklm@gmail.com</email>
+        <Aadhar>5467 1012 3232 2324</Aadhar>
+        <seats>5</seats>
+        <amount>5500</amount>
+        <date>26-04-2021</date>
+        <category>A Type</category>
+        <trainNo>4573</trainNo>
+    </passenger>
+    <passenger name="Kannan" id="1014">
+        <age>47</age>
+        <gender>Male</gender>
+        <address>4, East masi street, Madurai-09</address>
+        <phone>87956 20454</phone>
+        <email>kannank@gmail.com</email>
+        <Aadhar>4556 3232 5467 2309</Aadhar>
+        <seats>2</seats>
+        <amount>100</amount>
+        <date>13-05-2021</date>
+        <category>C Type</category>
+        <trainNo>6666</trainNo>
+    </passenger>
+    <passenger name="Pooja" id="1015">
+        <age>32</age>
+        <gender>Female</gender>
+        <address>3, Ganapthy street, Coimbatoore-09</address>
+        <phone>99456 23454</phone>
+        <email>poojakm@gmail.com</email>
+        <Aadhar>9876 3232 5467 2324</Aadhar>
+        <seats>1</seats>
+        <amount>500</amount>
+        <date>21-03-2021</date>
+        <category>Z Type</category>
+        <trainNo>8787</trainNo>
+    </passenger>
+</bookingDetails>
+    

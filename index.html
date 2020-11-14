@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TrainApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+    <body style="background-color: pink">      
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="passengerDOM.html">View PasengerDetails</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="trainDOM.html">Train_DOM</a></li>
+          <li><a href="TrainJSONparse.html">Train_JSON_Parse</a></li>
+          <li><a href="train.xml">Train_XSLT_Design</a></li>
+          <li><a href="TrainXSLT.xsl">Train_XSLT_code</a></li>
+        </ul>
+      </div>
+    </nav>  
+      <div class="container" style="color: rgb(89, 31, 155); font-size: 30px; text-shadow: 3px 3px 2px rgb(27, 183, 194);">
+        <Center><h1><b>Train Booking Application</b></h1></Center>
+      </div>
+
+      <div class="container-fluid">
+      <center>     
+      <h2 id="heading" style="color: rgb(89, 31, 155); font-size: 28px; text-shadow: 3px 3px 2px rgb(27, 183, 194);"></h2>
+      <table border=10 style="font-size:25px;" width="80%" Height="80%">
+        <tr>
+          <td id="0"><b>S.No.</b><br></td>
+          <td id="ctg"><b>Category</b><br></td>
+          <td id="ac"><b>AC</b><br></td>
+          <td id="num"><b>Train Number</b><br></td>
+          <td id="ExpN"><b>Express Name</b><br></td>
+          <td id="ExpType"><b>Express Type</b><br></td>
+        </tr>
+      </table>
+<br><br>  
+<a href="trainXML.xml" class="btn btn-primary" role="button"><h4><b>View XML Code</b></h4></a>
+<a href="TrainDTD.txt" class="btn btn-primary" role="button"><h4><b>View DTD Code</b></h4></a>
+<a href="TrainSchema.xsd" class="btn btn-primary" role="button"><h4><b>View Schema Code</b></h4></a>
+</center>
+  </div>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+       if(this.readyState == 4 && this.status == 200){
+              myFunction(this);
+            }
+      };
+      xmlhttp.open("GET", "train.xml", true);
+      xmlhttp.send();
+      function myFunction(xml){
+        var i;
+        var v1="";
+        var v2="";
+        var v3="";
+        var v4="";
+        var v5="";
+        var xmlDoc = xml.responseXML;
+        var num=""; 
+        var n = xmlDoc.getElementsByTagName("train")[0].childElementCount;
+      for(i=0;i<n;i++)
+      {
+        num += "<br>"+ (i+1) +"</br>";
+        v1 += "<br>"+ xmlDoc.getElementsByTagName("Category")[i].attributes[0].nodeValue +"</br>";    
+        v2 += "<br>"+ xmlDoc.getElementsByTagName("Category")[i].attributes[1].nodeValue +"</br>";
+        v3 += "<br>"+ xmlDoc.getElementsByTagName("number")[i].childNodes[0].nodeValue +"</br>";
+        v4 += "<br>"+ xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue +"</br>";
+        v5 += "<br>"+ xmlDoc.getElementsByTagName("type")[i].childNodes[0].nodeValue +"<br>";
+      }
+      document.getElementById("heading").innerHTML = "<b>"+ "Train Details" +"</b>";
+      document.getElementById("0").innerHTML +=num;
+      document.getElementById("ctg").innerHTML +=v1;
+      document.getElementById("ac").innerHTML +=v2;
+      document.getElementById("num").innerHTML +=v3;
+      document.getElementById("ExpN").innerHTML +=v4;
+      document.getElementById("ExpType").innerHTML +=v5;
+};  
+      </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{
+    "TrainDetails":{
+        "train":
+        [
+            {
+                "Category":[{"Class": "First", "AC": "Yes"}],
+                "Number":"4573",
+                "Type":"A type"
+            },
+            {
+                "Category":[{"Class": "Second", "AC": "Yes"}],
+                "Number":"5235",
+                "Type":"B type"
+            },
+            {
+                "Category":[{"Class": "Sleeper", "AC": "No"}],
+                "Number":"4573",
+                "Type":"C type"     
+            },
+            {
+                "Category":[{"Class": "General", "AC": "No"}],
+                "Number":"8787",
+                "Type":"Z type"
+            }   
+        ]    
+    }
+}

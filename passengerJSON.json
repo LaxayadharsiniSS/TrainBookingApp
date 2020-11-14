@@ -1,0 +1,78 @@
+{
+"PassengerDetails":
+    {
+    "booking":[
+        {
+        "Passenger": [{"name": "Ramu", "id":"1011"}],
+        "age": "25",
+        "gender": "Male",
+        "address": "43, Gandhi street, Madurai-09",
+        "phone": "99456 23454",
+        "email": "ramuk@gmail.com",
+        "Aadhar": "1112 3232 5467 2324",
+        "seats": "1",
+        "amount": "500",
+        "date": "25-01-2021",
+        "category": "Z Type",
+        "trainNo": "8787"
+        },
+        {
+            "Passenger": [{"name": "Kirthana", "id":"1012"}],
+            "age": "45",
+            "gender": "Female",
+            "address": "23, Guru street, Chennai-03",
+            "phone": "81453 22454",
+            "email": "kirthanagm@gmail.com",
+            "Aadhar": "3452 3432 5462 2324",
+            "seats": "2",
+            "amount": "1600",
+            "date": "12-03-2021",
+            "category": "B Type",
+            "trainNo": "5235"
+       },
+        {
+            "Passenger": [{"name": "Prithvik", "id":"1013"}],
+            "age": "35",
+            "gender": "Male",
+            "address": "14, Laxmi street, Karur-07",
+            "phone": "86756 20984",
+            "email": "prithviklm@gmail.com",
+            "Aadhar": "5467 1012 3232 2324",
+            "seats": "5",
+            "amount": "5500",
+            "date": "26-04-2021",
+            "category": "A Type",
+            "trainNo": "4573" 
+        },
+        {
+            "Passenger": [{"name": "Kannan", "id":"1014"}],
+            "age": "47",
+            "gender": "Female",
+            "address": "4, East masi street, Madurai-09",
+            "phone": "87956 20454",
+            "email": "kannank@gmail.com",
+            "Aadhar": "4556 3232 5467 2309",
+            "seats": "2",
+            "amount": "100",
+            "date": "13-05-2021",
+            "category": "C Type",
+            "trainNo": "6666"
+        },       
+        {
+            "Passenger": [{"name": "Pooja", "id":"1015"}],
+            "age": "32",
+            "gender": "Female",
+            "address": "3, Ganapthy street, Coimbatoore-09",
+            "phone": "99456 23454",
+            "email": "poojakm@gmail.com",
+            "Aadhar": "9876 3232 5467 2324",
+            "seats": "1",
+            "amount": "500",
+            "date": "21-03-2021",
+            "category": "Z Type",
+            "trainNo": "8787"
+        }
+    ]    
+    }
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE train SYSTEM "TrainDTD.dtd"> 
+<train> 
+   <Category class="First" AC="Yes">
+      <number>4573</number>
+      <name>Mumbai Express</name>
+      <type>A type</type>
+   </Category>   
+   <Category class="Second" AC="Yes">
+      <number>5235</number>
+      <name>Chennai Express</name>
+      <type>B type</type>
+   </Category>
+   <Category class="Sleeper" AC="No">
+      <number>6666</number>
+      <name>ABC Express</name>
+      <type>C type</type>
+   </Category>
+   <Category class="General" AC="No">
+      <number>8787</number>
+      <name>General Express</name>
+      <type>Z type</type>
+   </Category>
+</train>

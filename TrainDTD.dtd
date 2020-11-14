@@ -1,0 +1,7 @@
+<!ELEMENT train (Category+)>
+<!ELEMENT Category (number,name,type)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST Category Class (First/Second/Sleeper/General)>
+<!ATTLIST Category AC (Yes/No)> 

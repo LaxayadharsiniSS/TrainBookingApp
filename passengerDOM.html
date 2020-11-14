@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TrainApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+    <body style="background-color: pink">      
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="trainDOM.html">View TrainDetails</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="passengerDOM.html">Passenger_DOM</a></li>
+          <li><a href="passengerJSONparse.html">Passenger_JSON_Parse</a></li>
+          <li><a href="passenger.xml">Passenger_XSLT_Design</a></li>
+          <li><a href="passengerXSLT.xsl">Passenger_XSLT_code</a></li>
+        </ul>
+      </div>
+    </nav>  
+      <div class="container" style="color: rgb(89, 31, 155); font-size: 30px; text-shadow: 3px 3px 2px rgb(27, 183, 194);">
+        <Center><h1><b>Train Booking Application</b></h1></Center>
+      </div>
+
+    <div class="container-fluid">
+      <center>     
+    <h2 id="heading" style="color: rgb(89, 31, 155); font-size: 28px; text-shadow: 3px 3px 2px rgb(27, 183, 194);"></h2>
+        <table border=10 style="font-size:14px;" width="100%" Height="90%">
+        <tr>
+          <td id="0"><b>S.No.</b><br></td>
+          <td id="id"><b>Passenger ID</b><br></td>
+          <td id="name"><b>Name</b><br></td>
+          <td id="age"><b>Age</b><br></td>
+          <td id="gender"><b>Gender</b><br></td>
+          <td id="address"><b>Address</b><br></td>
+          <td id="phone"><b>Phone Number</b><br></td>
+          <td id="email"><b>Email</b><br></td>
+          <td id="aadhar"><b>Aadhar</b><br></td>
+          <td id="seats"><b>Seats booked</b><br></td>
+          <td id="amount"><b>Amount Paid</b><br></td>
+          <td id="date"><b>Date of Travel</b><br></td>
+          <td id="category"><b>Category</b><br></td>
+          <td id="train"><b>Alloted Train Number</b><br></td>
+        </tr>
+      </table>
+<br><br>  
+<a href="passengerXML.xml" class="btn btn-primary" role="button"><h4><b>View XML Code</b></h4></a>
+<a href="passengerDTD.txt" class="btn btn-primary" role="button"><h4><b>View DTD Code</b></h4></a>
+<a href="PassengerSchema.xsd" class="btn btn-primary" role="button"><h4><b>View Schema Code</b></h4></a>
+</center>
+  </div>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+       if(this.readyState == 4 && this.status == 200){
+              myFunction(this);
+            }
+      };
+      xmlhttp.open("GET", "passenger.xml", true);
+      xmlhttp.send();
+      function myFunction(xml){
+        var i;
+        var v1="";
+        var v2="";
+        var v3="";
+        var v4="";
+        var v5="";
+        var v6="";
+        var v7="";
+        var v8="";
+        var v9="";
+        var v10="";
+        var v11="";
+        var v12="";
+        var v13="";
+        var xmlDoc = xml.responseXML;
+        var num=""; 
+        var n = xmlDoc.getElementsByTagName("bookingDetails")[0].childElementCount;
+      for(i=0;i<n;i++)
+      {
+        num += "<br>"+ (i+1) +"</br>";
+        v1 += "<br>"+ xmlDoc.getElementsByTagName("passenger")[i].attributes[1].nodeValue +"</br>";    
+        v2 += "<br>"+ xmlDoc.getElementsByTagName("passenger")[i].attributes[0].nodeValue +"</br>";
+        v3 += "<br>"+ xmlDoc.getElementsByTagName("age")[i].childNodes[0].nodeValue +"</br>";
+        v4 += "<br>"+ xmlDoc.getElementsByTagName("gender")[i].childNodes[0].nodeValue +"</br>";
+        v5 += "<br>"+ xmlDoc.getElementsByTagName("address")[i].childNodes[0].nodeValue +"<br>";
+        v6 += "<br>"+ xmlDoc.getElementsByTagName("phone")[i].childNodes[0].nodeValue +"<br>";
+        v7 += "<br>"+ xmlDoc.getElementsByTagName("email")[i].childNodes[0].nodeValue +"<br>";
+        v8 += "<br>"+ xmlDoc.getElementsByTagName("Aadhar")[i].childNodes[0].nodeValue +"<br>";
+        v9 += "<br>"+ xmlDoc.getElementsByTagName("seats")[i].childNodes[0].nodeValue +"<br>";
+        v10 += "<br>"+ xmlDoc.getElementsByTagName("amount")[i].childNodes[0].nodeValue +"<br>";
+        v11 += "<br>"+ xmlDoc.getElementsByTagName("date")[i].childNodes[0].nodeValue +"<br>";
+        v12 += "<br>"+ xmlDoc.getElementsByTagName("category")[i].childNodes[0].nodeValue +"<br>";
+        v13 += "<br>"+ xmlDoc.getElementsByTagName("trainNo")[i].childNodes[0].nodeValue +"<br>";
+      }
+      document.getElementById("heading").innerHTML = "<b>"+ "Passenger Details" +"</b>";
+      document.getElementById("0").innerHTML +=num;
+      document.getElementById("id").innerHTML +=v1;
+      document.getElementById("name").innerHTML +=v2;
+      document.getElementById("age").innerHTML +=v3;
+      document.getElementById("gender").innerHTML +=v4;
+      document.getElementById("address").innerHTML +=v5;
+      document.getElementById("phone").innerHTML +=v6;
+      document.getElementById("email").innerHTML +=v7;
+      document.getElementById("aadhar").innerHTML +=v8;
+      document.getElementById("seats").innerHTML +=v9;
+      document.getElementById("amount").innerHTML +=v10;
+      document.getElementById("date").innerHTML +=v11;
+      document.getElementById("category").innerHTML +=v12;
+      document.getElementById("train").innerHTML +=v13;
+};  
+      </script>
+    </body>
+</html>

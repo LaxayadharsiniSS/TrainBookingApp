@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TrainApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+    <body style="background-color: rgb(180, 247, 162)">      
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="passengerDOM.html">View PasengerDetails</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="trainDOM.html">Train_DOM</a></li>
+          <li class="active"><a href="TrainJSONparse.html">Train_JSON_Parse</a></li>
+          <li><a href="train.xml">Train_XSLT_Design</a></li>
+          <li><a href="TrainXSLT.xsl">Train_XSLT_code</a></li>
+        </ul>
+      </div>
+    </nav>  
+      <div class="container" style="color: rgb(89, 31, 155); font-size: 30px; text-shadow: 3px 3px 2px rgb(27, 183, 194);">
+        <Center><h1><b>Train Booking Application</b></h1></Center>
+      </div>
+
+      <div class="container-fluid">
+      <center>     
+        <h2 id="heading" style="color: rgb(89, 31, 155); font-size: 28px; text-shadow: 3px 3px 2px rgb(27, 183, 194);"></h2>
+        <table border=10 style="font-size:25px;" width="80%" Height="80%">
+        <tr>
+          <td id="0"><b>S.No.</b><br></td>
+          <td id="ctg"><b>Category</b><br></td>
+          <td id="ac"><b>AC</b><br></td>
+          <td id="num"><b>Train Number</b><br></td>
+          <td id="ExpN"><b>Express Name</b><br></td>
+          <td id="ExpType"><b>Express Type</b><br></td>
+        </tr>
+      </table>
+<br><br>  
+<a href="TrainJSON.json" class="btn btn-primary" role="button"><h4><b>View JSON Code</b></h4></a>
+</center>
+  </div>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      var i;
+      var v1="";
+      var v2="";
+      var v3="";
+      var count=0;
+        xmlhttp.onreadystatechange = function(){
+       if(this.readyState == 4 && this.status == 200){
+              var myObj= JSON.parse(this.responseText);
+              
+      var v4="";
+      var v5="";
+      var num=""; 
+      var i;
+      for(i in myObj.TrainDetails.train)
+      {
+        num += "<br>"+ (count+1) +"</br>";
+        v1 += "<br>"+ myObj.TrainDetails.train[i].Category.Class +"</br>";    
+        v2 += "<br>"+ myObj.TrainDetails.train[i].Category.AC +"</br>";
+        v3 += "<br>"+ myObj.TrainDetails.train[i].Number +"</br>";    
+        v4 += "<br>"+ myObj.TrainDetails.train[i].Name +"</br>";
+        v5 += "<br>"+ myObj.TrainDetails.train[i].Type +"</br>";
+      }
+      document.getElementById("heading").innerHTML = "<b>"+ "Train Details" +"</b>";
+      document.getElementById("0").innerHTML +=num;
+      document.getElementById("ctg").innerHTML +=v1;
+      document.getElementById("ac").innerHTML +=v2;
+      document.getElementById("num").innerHTML +=v3;
+      document.getElementById("ExpN").innerHTML +=v4;
+      document.getElementById("ExpType").innerHTML +=v5;
+}
+    };  
+      xmlhttp.open("GET", "TrainJSON.json", true);
+      xmlhttp.send();
+      </script>
+    </body>
+</html>
